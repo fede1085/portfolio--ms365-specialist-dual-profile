@@ -8,13 +8,14 @@ import StudyCase from "./components/StudyCase"
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Footer from './components/Footer';
-import { resumeData } from './constants';
+import { resumeData } from './data/constants';
 import SoftSkills from './components/SoftSkills';
-
+import SmoothScroll from "./components/SmoothScroll";
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
+      <SmoothScroll />
       <Routes>
 
         {/* 🏠 HOME */}

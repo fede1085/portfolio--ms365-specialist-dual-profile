@@ -2,6 +2,7 @@ import { MailCheck } from "lucide-react"
 import { useParams } from "react-router-dom"
 import { Home } from "lucide-react"
 import { CASES } from "../data/dataStudyCases"
+import Header from './Header';
 
 export default function StudyCases() {
 
@@ -24,15 +25,24 @@ export default function StudyCases() {
     label: caseData.label,
     desc: caseData.desc,
     problem: caseData.problem,
+    summary: caseData.summary,
     approach: caseData.approach,
     solution: caseData.implementation,
     result: caseData.result,
     tools: caseData.tools,
+
+    // 🔥 NUEVO
+    context: caseData.context,
+    scope: caseData.scope,
+    before: caseData.before,
+    after: caseData.after,
   }
 
   return (
     <>
       <section id="skills" className="bg-white pb-4">
+        <Header />
+
         <div className="bg-[#F7F7F7] py-20 mb-20 border-b border-gray-200">
           <div className="text-center max-w-3xl mx-auto px-4">
             <h3 className="text-sm font-medium text-[#0067B8] uppercase tracking-widest">
@@ -45,23 +55,52 @@ export default function StudyCases() {
         </div>
 
         <div className="max-w-3xl mx-auto px-4 px-6 sm:px-6 lg:px-8 mb-16">
-          <div className="space-y-16 ">
+          <div className="space-y-16">
 
-            <div
-              className="flex flex-col sm:flex-row items-start gap-6 pb-12"
-            >
-
+            <div className="flex flex-col sm:flex-row items-start gap-6 pb-12">
               <div className="flex-1 text-left">
+
                 <div className="mb-12 pb-12 border-b border-gray-200">
-                  {/* <h4 className="text-xl font-bold text-[#333131]">
-                    {skill.label}
-                  </h4> */}
                   <p className="text-[#333131] mt-2">
                     {skill.desc}
                   </p>
                 </div>
 
                 <div className="space-y-14">
+
+                  {/* Key Impact */}
+                  <div>
+                    <p className="text-xs text-[#333131] uppercase font-semibold mb-2">
+                      Key Impact
+                    </p>
+                    <ul className="space-y-1 text-gray-600">
+                      {skill.summary.map((item, i) => (
+                        <li key={i}>• {item}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Context */}
+                  <div>
+                    <p className="text-xs text-[#333131] uppercase font-semibold mb-4">
+                      Context
+                    </p>
+                    <p className="text-gray-600">
+                      {skill.context}
+                    </p>
+                  </div>
+
+                  {/* Scope */}
+                  <div>
+                    <p className="text-xs text-[#333131] uppercase font-semibold mb-4">
+                      Scope
+                    </p>
+                    <ul className="space-y-1 text-gray-600">
+                      {skill.scope.map((item, i) => (
+                        <li key={i}>• {item}</li>
+                      ))}
+                    </ul>
+                  </div>
 
                   {/* Problem */}
                   <div>
@@ -71,6 +110,33 @@ export default function StudyCases() {
                     <p className="text-gray-600 whitespace-pre-line">
                       {skill.problem}
                     </p>
+                  </div>
+
+                  {/* Before / After */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+                    <div>
+                      <p className="text-xs text-[#333131] uppercase font-semibold mb-4">
+                        Before
+                      </p>
+                      <ul className="space-y-1 text-gray-600">
+                        {skill.before.map((item, i) => (
+                          <li key={i}>• {item}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div>
+                      <p className="text-xs text-[#333131] uppercase font-semibold mb-4">
+                        After
+                      </p>
+                      <ul className="space-y-1 text-gray-600">
+                        {skill.after.map((item, i) => (
+                          <li key={i}>• {item}</li>
+                        ))}
+                      </ul>
+                    </div>
+
                   </div>
 
                   {/* Approach */}
@@ -107,7 +173,8 @@ export default function StudyCases() {
                     </ul>
                   </div>
 
-                  <div className="">
+                  {/* Tools */}
+                  <div>
                     <p className="text-xs text-[#333131] uppercase font-semibold mb-4">
                       Tools
                     </p>
@@ -142,7 +209,6 @@ export default function StudyCases() {
       <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
         <div className="flex items-center gap-4 bg-white border border-gray-200 rounded-sm px-4 py-2">
 
-          {/* PREVIOUS */}
           {prevCase && (
             <a
               href={`/case/${prevCase}`}
@@ -152,7 +218,6 @@ export default function StudyCases() {
             </a>
           )}
 
-          {/* HOME */}
           <a
             href="/"
             className="flex items-center gap-1 text-sm font-regular text-[#333131] px-3 underline"
@@ -160,7 +225,6 @@ export default function StudyCases() {
             <Home size={16} />
           </a>
 
-          {/* NEXT */}
           {nextCase && (
             <a
               href={`/case/${nextCase}`}

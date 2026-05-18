@@ -42,11 +42,11 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
             <h4 className="text-sm font-semibold text-gray-900">Contact Info</h4>
 
             <div className="mt-2 text-gray-600 flex flex-col space-y-1 text-sm items-center">
-              <a href={`mailto:${email}`} className="hover:text-gray-900">
+              <a href={`mailto:${email}`} className="text-sm font-regular text-[#0067B8] underline">
                 {email}
               </a>
               <p className="mt-2 text-sm text-gray-600">{data.address}</p>
-              <a href={`tel:${phone.replace(/\s/g, '')}`} className="hover:text-gray-900">
+              <a href={`tel:${phone.replace(/\s/g, '')}`} className="text-sm font-regular text-[#0067B8] underline">
                 {phone}
               </a>
             </div>

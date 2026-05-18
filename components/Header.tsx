@@ -6,11 +6,11 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ name }) => {
   const navLinks = [
-    { name: 'Overview', href: '#overview' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Tools', href: '#tools' },
-    { name: 'Background', href: '#experience' },
-    { name: 'Hire me', href: '#contact' },
+    { name: 'Overview', href: '/#overview' },
+    { name: 'Skills', href: '/#skills' },
+    { name: 'Tools', href: '/#tools' },
+    { name: 'Background', href: '/#experience' },
+    { name: 'Hire me', href: '/#contact' },
   ];
 
   return (
