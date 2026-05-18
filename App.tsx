@@ -4,15 +4,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
-import StudyCase from "./components/StudyCase"
+import StudyCase from "./components/StudyCase";
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Footer from './components/Footer';
-import { resumeData } from './data/constants';
+import { getProfileContent } from './data/profileSelector';
 import SoftSkills from './components/SoftSkills';
 import SmoothScroll from "./components/SmoothScroll";
 
 const App: React.FC = () => {
+  const resumeData = getProfileContent();
+
   return (
     <BrowserRouter>
       <SmoothScroll />
