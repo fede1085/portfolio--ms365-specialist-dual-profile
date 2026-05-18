@@ -1,117 +1,61 @@
+import React from "react"
 import { ClipboardList, MailCheck, Laptop, Bot, FolderCheck } from "lucide-react"
 
-export default function SoftSkills() {
+type Tool = {
+  name: string
+  icon: string
+}
+
+type CasePreviewItem = {
+  icon: string
+  label: string
+  slug: string
+  desc: string
+  problem: string
+  solution: string[]
+  tools: Tool[]
+}
+
+type SoftSkillsProps = {
+  data: {
+    eyebrow: string
+    title: string
+    items: CasePreviewItem[]
+  }
+}
+
+const iconMap: Record<string, React.ReactNode> = {
+  folder: <FolderCheck size={22} strokeWidth={2} />,
+  mail: <MailCheck size={22} strokeWidth={2} />,
+  task: <ClipboardList size={22} strokeWidth={2} />,
+  laptop: <Laptop size={22} strokeWidth={2} />,
+  bot: <Bot size={22} strokeWidth={2} />,
+}
+
+export default function SoftSkills({ data }: SoftSkillsProps) {
   return (
     <section id="skills" className="py-16 bg-white pb-4 sm:py-20">
       <div className="text-center">
         <h3 className="text-sm font-medium text-[#0067B8] uppercase tracking-widest">
-          How I Help
+          {data.eyebrow}
         </h3>
+
         <h2 className="text-2xl sm:text-3xl font-extrabold text-[#333131]">
-          Operational Support & Back-Office Solutions
+          {data.title}
         </h2>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
         <div className="space-y-16">
-          {[
-            {
-              icon: <FolderCheck size={22} strokeWidth={2} />,
-              label: "Organize Documents, Folders & Shared Libraries",
-              slug: "document-management",
-              desc: "Keep files, folders and shared information clear and easy to follow.",
-              problem: "Scattered files, duplicate versions and unclear structures.",
-              solution: [
-                "Organize shared folders and document libraries",
-                "Ensure teams find the correct version quickly",
-                "Keep shared information clear and consistent",
-              ],
-              tools: [
-                { name: "SharePoint", icon: "/app-logos/core_tools/logo_sharepoint.svg" },
-                { name: "OneDrive", icon: "/app-logos/core_tools/logo_one-drive.svg" },
-                { name: "Teams", icon: "/app-logos/core_tools/logo_teams.svg" },
-                { name: "Word", icon: "/app-logos/productivity_tools/logo_word.svg" },
-              ],
-            },
-            {
-              icon: <MailCheck size={22} strokeWidth={2} />,
-              label: "Manage Shared Inboxes & Email Follow-Up",
-              slug: "shared-inbox",
-              desc: "Bring structure to busy inboxes and daily communication.",
-              problem: "Unclear ownership, lost emails and slow responses.",
-              solution: [
-                "Organize incoming emails into clear categories",
-                "Assign responsibility and follow-up",
-                "Turn emails into clear tasks for follow-up",
-              ],
-              tools: [
-                { name: "Outlook", icon: "/app-logos/core_tools/logo_outlook.svg" },
-                { name: "Planner", icon: "/app-logos/workflow_tools/logo_planner.svg" },
-                { name: "Teams", icon: "/app-logos/core_tools/logo_teams.svg" },
-              ],
-            },
-            {
-              icon: <ClipboardList size={22} strokeWidth={2} />,
-              label: "Track Tasks, Requests & Project Progress",
-              slug: "task-tracking",
-              desc: "Help manage tasks, emails and shared information across teams.",
-              problem: "Tasks lost in emails and missed deadlines.",
-              solution: [
-                "Organize requests and daily work into clear task lists",
-                "Track responsibilities and progress across teams",
-                "Keep deadlines visible and follow-ups clear"
-              ],
-              tools: [
-                { name: "Planner", icon: "/app-logos/workflow_tools/logo_planner.svg" },
-                { name: "Lists", icon: "/app-logos/core_tools/logo_sharepoint-lists.svg" },
-                { name: "Teams", icon: "/app-logos/core_tools/logo_teams.svg" },
-                { name: "OneNote", icon: "/app-logos/productivity_tools/logo_one-note.svg" },
-              ],
-            },
-            {
-              icon: <Laptop size={22} strokeWidth={2} />,
-              label: "Support Daily Administrative Work",
-              slug: "administrative-support",
-              desc: "Reduce repetitive tasks and keep daily work consistent.",
-              problem: "Manual tasks, duplicated work and lack of clarity.",
-              solution: [
-                "Keep repetitive tasks simple and organized",
-                "Use of tools to track tasks and follow-ups",
-                "Reduce errors in daily work",
-              ],
-              tools: [
-                { name: "Excel", icon: "/app-logos/productivity_tools/logo_excel.svg" },
-                { name: "Forms", icon: "/app-logos/productivity_tools/logo_forms.svg" },
-                { name: "Outlook", icon: "/app-logos/core_tools/logo_outlook.svg" },
-              ],
-            },
-            {
-              icon: <Bot size={22} strokeWidth={2} />,
-              label: "AI-Enhanced Information Structuring",
-              slug: "ai-structuring",
-              desc: "Prepare and structure information before integrating it into Microsoft 365 workflows.",
-              problem: "Unstructured information, scattered data and unclear task ownership slow down daily operations.",
-              solution: [
-                "Research and analyze information from different sources",
-                "Create clear summaries and extract key insights",
-                "Structure tasks, priorities and follow-ups",
-                "Prepare project notes and documentation",
-                "Organize information into clear and usable formats"
-              ],
-              tools: [
-                { name: "ChatGPT", icon: "/app-logos/ai_tools/chatgpt-icon.svg" },
-                { name: "Perplexity", icon: "/app-logos/ai_tools/perplexity-icon.svg" },
-                { name: "Gemini", icon: "/app-logos/ai_tools/gemini-icon.svg" },
-                { name: "NotebookLM", icon: "/app-logos/ai_tools/notebooklm-icon.svg" }
-              ],
-            }
-          ].map((skill, index) => (
+          {data.items.map((skill, index) => (
             <div
               key={skill.label}
-              className={`flex flex-col sm:flex-row items-start gap-6 ${index !== 4 ? "pb-12 border-b border-gray-200" : ""}`}
+              className={`flex flex-col sm:flex-row items-start gap-6 ${
+                index !== data.items.length - 1 ? "pb-12 border-b border-gray-200" : ""
+              }`}
             >
               <div className="w-11 h-11 flex items-center justify-center rounded-full bg-[#F7F7F7] text-[#0067B8] border border-gray-300">
-                {skill.icon}
+                {iconMap[skill.icon] || iconMap.folder}
               </div>
 
               <div className="flex-1 text-left">
@@ -169,7 +113,6 @@ export default function SoftSkills() {
                   </div>
                 </div>
 
-                {/* 🔥 NUEVO LINK */}
                 <div className="mt-4">
                   <a
                     href={`/case/${skill.slug}`}
@@ -178,7 +121,6 @@ export default function SoftSkills() {
                     View Case Study →
                   </a>
                 </div>
-
               </div>
             </div>
           ))}

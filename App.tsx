@@ -38,7 +38,8 @@ const App: React.FC = () => {
 
                   <Services valueProposition={resumeData.value_proposition} />
 
-                  <SoftSkills />
+                  {/* <SoftSkills /> */}
+                  <SoftSkills data={resumeData.case_studies_preview} />
 
                   <Skills toolStack={resumeData.tool_stack} />
 
@@ -53,10 +54,15 @@ const App: React.FC = () => {
         />
 
         {/* 📄 CASE PAGE */}
-        <Route
-          path="/case/:slug"
-          element={<StudyCase />}
-        />
+   <Route
+  path="/case/:slug"
+  element={
+    <StudyCase
+      name={resumeData.name}
+      cases={resumeData.case_studies}
+    />
+  }
+/>
 
       </Routes>
     </BrowserRouter>

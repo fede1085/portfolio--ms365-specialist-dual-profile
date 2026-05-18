@@ -1,17 +1,42 @@
-import { MailCheck } from "lucide-react"
+import { MailCheck, Home } from "lucide-react"
 import { useParams } from "react-router-dom"
-import { Home } from "lucide-react"
-import { CASES } from "../data/dataStudyCases"
 import Header from './Header';
 
-export default function StudyCases() {
+type Tool = {
+  name: string
+  icon: string
+}
+
+type CaseData = {
+  title: string
+  label: string
+  type?: string
+  context: string
+  scope: string[]
+  desc: string
+  summary: string[]
+  before: string[]
+  after: string[]
+  problem: string
+  approach: string
+  implementation: string[]
+  result: string[]
+  tools: Tool[]
+}
+
+type StudyCasesProps = {
+  name: string
+  cases: Record<string, CaseData>
+}
+
+export default function StudyCases({ name, cases }: StudyCasesProps) {
 
   const { slug } = useParams()
 
-  const caseData = CASES[slug as keyof typeof CASES]
+  const caseData = slug ? cases[slug] : undefined
 
-  const caseKeys = Object.keys(CASES)
-  const currentIndex = caseKeys.indexOf(slug as string)
+  const caseKeys = Object.keys(cases)
+  const currentIndex = caseKeys.indexOf(slug ?? "")
 
   const prevCase = caseKeys[currentIndex - 1]
   const nextCase = caseKeys[currentIndex + 1]
@@ -41,7 +66,7 @@ export default function StudyCases() {
   return (
     <>
       <section id="skills" className="bg-white pb-4">
-        <Header />
+        <Header name={name} />
 
         <div className="bg-[#F7F7F7] py-20 mb-20 border-b border-gray-200">
           <div className="text-center max-w-3xl mx-auto px-4">
