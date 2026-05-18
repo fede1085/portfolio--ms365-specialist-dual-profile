@@ -1,9 +1,9 @@
 export const resumeData = {
   name: "Federico Mosqueira",
   location: "Antwerp, Belgium",
-  languages: ["Spanish (native)", "English (fluent)", "Dutch (basic)"],
-  availability: ["Freelance", "Contract"],
-  contact: "hello@federicomosqueira.site | +31 6 42656946",
+  languages: ["Spanish (native)", "English (B2)", "Dutch (basic A1)"],
+  availability: ["Immediate", "Part-time", "Open to full-time"],
+  contact: "fede1985.mosqueira@gmail.com | +31 6 42656946",
   address: "2018 - Antwerpen, Belgium",
   nationality: "Uruguayan",
   marital_status: "Married",
@@ -12,7 +12,7 @@ export const resumeData = {
     // title: "Back-Office Assistant | Operations Support",
     title: "Office Administrator | Operations Support",
     summary:
-    "Administrative Support professional with strong digital skills, focused on Microsoft 365 organization, productivity and workflow improvement."
+      "Administrative Support professional with strong digital skills, focused on Microsoft 365 organization, productivity and workflow improvement."
     //  "I support daily operations by organizing information, managing documents and supporting administrative workflows to be more clear and efficient using Microsoft 365 tools."
     // I assist teams with daily administrative coordination and help manage tasks, emails and shared information across teams.
   },

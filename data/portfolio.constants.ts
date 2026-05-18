@@ -10,15 +10,15 @@ export const resumeData = {
 
   professional_profile: {
     // title: "Back-Office Assistant | Operations Support",
-    title: "Office Administrator | Operations Support",
+    title: "Workplace Specialist | Information Architecture",
     summary:
-    "Administrative Support professional with strong digital skills, focused on Microsoft 365 organization, productivity and workflow improvement."
+      "Digital workplace specialist focused on organizing Microsoft 365 workspaces, information structures and operational workflows for clearer team collaboration."
     //  "I support daily operations by organizing information, managing documents and supporting administrative workflows to be more clear and efficient using Microsoft 365 tools."
     // I assist teams with daily administrative coordination and help manage tasks, emails and shared information across teams.
   },
 
   value_proposition: [
-    "Back-office operations support focused on bringing clarity, structure and reliability to daily administrative work. I help teams keep documents, tasks and communication organized using Microsoft 365 and simple ways of organizing daily work, including document handling and data organization."
+    "I help small teams and growing businesses structure their digital workplace using Microsoft 365. My focus is on organizing information, documents, shared spaces and daily workflows so teams can work with more clarity, less confusion and better operational control."
   ],
 
   tool_stack: {
@@ -54,13 +54,13 @@ export const resumeData = {
 
   experience: [
     {
-      role: "Administrative & Operations Support",
+      role: "Digital Workplace & Operations Structure",
       location: "Antwerp",
       period: "2024–Present",
       highlights: [
-        "Supported day-to-day organization of documents and information across digital tools",
-        "Worked within Microsoft 365 applications and tools to assist daily operations, document handling and team coordination",
-        "Helped organize daily work and keep administrative tasks clear and easy to follow"
+        "Designed practical Microsoft 365 workspace structures for documents, tasks and team collaboration",
+        "Organized information flows across tools such as SharePoint, Teams, Outlook and Planner",
+        "Helped translate operational needs into clear digital structures that are easy for teams to use"
       ]
     }
   ],
