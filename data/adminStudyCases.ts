@@ -1,4 +1,4 @@
-export const PORTFOLIO_CASES = {
+export const ADMIN_CASES = {
   "tenant-structure-design": {
     title: "Microsoft 365 Tenant Structure Design",
     label: "Tenant Structure & Workspace Blueprint",
@@ -387,28 +387,28 @@ The goal was to keep the system simple enough for daily use.`,
     problem:
       `Manual Microsoft 365 setup becomes difficult to scale when there is no structured data behind it.
 
-Users, groups, mailboxes and permissions may be created one by one, without a reusable plan.
+      Users, groups, mailboxes and permissions may be created one by one, without a reusable plan.
 
-As a result:
+      As a result:
 
-• Setup is hard to repeat
-• Reviews are difficult
-• Naming becomes inconsistent
-• Automation becomes risky`,
+      • Setup is hard to repeat
+      • Reviews are difficult
+      • Naming becomes inconsistent
+      • Automation becomes risky`,
 
-    approach:
-      `The approach was to prepare a clear blueprint before automation.
+      approach:
+            `The approach was to prepare a clear blueprint before automation.
 
-The focus was on structured data:
+      The focus was on structured data:
 
-• Users
-• Groups
-• Mailboxes
-• Permissions
-• Ownership
-• Naming conventions
+      • Users
+      • Groups
+      • Mailboxes
+      • Permissions
+      • Ownership
+      • Naming conventions
 
-This makes the setup easier to review before anything is created.`,
+      This makes the setup easier to review before anything is created.`,
 
     implementation: [
       "Prepared CSV-style matrices for users, groups and mailboxes",

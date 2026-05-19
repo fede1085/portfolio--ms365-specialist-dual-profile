@@ -1,4 +1,4 @@
-export const CASES = {
+export const OFFICE_CASES = {
   "shared-inbox": {
     title: "Shared Inbox & Email Follow-Up Administration Process",
     label: "Email Inbox Processing & Task Assignment Workflow",

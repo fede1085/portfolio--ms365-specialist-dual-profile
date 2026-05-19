@@ -1,22 +1,26 @@
-import { resumeData as curriculumContent } from "./office.constants";
-import { resumeData as portfolioContent } from "./admin.constants";
+import { resumeData as officeContent } from "./office.constants";
+import { resumeData as adminContent } from "./admin.constants";
 
 export function getProfileContent() {
   const host = window.location.hostname;
   const params = new URLSearchParams(window.location.search);
   const profile = params.get("profile");
 
-  if (profile === "portfolio") {
-    return portfolioContent;
+  if (profile === "admin") {
+    return adminContent;
   }
 
-  if (profile === "curriculum") {
-    return curriculumContent;
+  if (profile === "office") {
+    return officeContent;
   }
 
-  if (host.includes("portfolio.")) {
-    return portfolioContent;
+  if (host.includes("admin.")) {
+    return adminContent;
   }
 
-  return curriculumContent;
+  if (host.includes("office.")) {
+    return officeContent;
+  }
+
+  return officeContent;
 }

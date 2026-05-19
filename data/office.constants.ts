@@ -1,4 +1,4 @@
-import { CASES } from "./officeStudyCases";
+import { OFFICE_CASES } from "./officeStudyCases";
 
 export const resumeData = {
   name: "Federico Mosqueira",
@@ -183,6 +183,5 @@ export const resumeData = {
     ],
   },
 
-  case_studies: CASES,
-
+  case_studies: OFFICE_CASES,
 };
