@@ -1,4 +1,4 @@
-import { CASES } from "./dataStudyCases";
+import { CASES } from "./officeStudyCases";
 
 export const resumeData = {
   name: "Federico Mosqueira",

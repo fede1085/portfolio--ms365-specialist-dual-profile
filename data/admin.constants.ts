@@ -1,4 +1,4 @@
-import { PORTFOLIO_CASES } from "./dataStudyCasesPortfolio";
+import { PORTFOLIO_CASES } from "./adminStudyCases";
 
 export const resumeData = {
   name: "Federico Mosqueira",

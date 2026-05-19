@@ -1,5 +1,5 @@
-import { resumeData as curriculumContent } from "./curriculum.constants";
-import { resumeData as portfolioContent } from "./portfolio.constants";
+import { resumeData as curriculumContent } from "./office.constants";
+import { resumeData as portfolioContent } from "./admin.constants";
 
 export function getProfileContent() {
   const host = window.location.hostname;
