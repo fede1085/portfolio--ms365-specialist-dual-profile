@@ -66,6 +66,15 @@ export const resumeData = {
       ]
     }
   ],
+  
+  ui_labels: {
+  footer: {
+    title: "Looking for a reliable assistant to keep your operations organized?",
+    subtitle: "I organize documents, tasks and daily office work using Microsoft 365. — Let’s start the conversation.",
+    button: "Get in touch",
+    contact_title: "Contact Info"
+  }
+},
 
   personal_skills: [
     {

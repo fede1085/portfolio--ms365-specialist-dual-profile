@@ -105,6 +105,15 @@ export const resumeData = {
   services_portfolio: [],
   workflow_methodology: [],
   monetization_strategies: [],
+  
+  ui_labels: {
+    footer: {
+      title: "Need help structuring your Microsoft 365 environment?",
+      subtitle: "I help small teams organize workspaces, permissions and operational workflows using Microsoft 365.",
+      button: "Contact me",
+      contact_title: "Professional Contact"
+    }
+  },
 
   case_studies_preview: {
     eyebrow: "How I Help",
