@@ -1,6 +1,9 @@
 import React from "react"
 import { ClipboardList, MailCheck, Laptop, Bot, FolderCheck } from "lucide-react"
 
+// NEW IMPORT ADDED
+import { useLocation } from "react-router-dom"
+
 type Tool = {
   name: string
   icon: string
@@ -33,6 +36,9 @@ const iconMap: Record<string, React.ReactNode> = {
 }
 
 export default function SoftSkills({ data }: SoftSkillsProps) {
+
+  // NEW VARIABLE ADDED
+  const location = useLocation()
   return (
     <section id="skills" className="py-16 bg-white pb-4 sm:py-20">
       <div className="text-center">
@@ -50,9 +56,8 @@ export default function SoftSkills({ data }: SoftSkillsProps) {
           {data.items.map((skill, index) => (
             <div
               key={skill.label}
-              className={`flex flex-col sm:flex-row items-start gap-6 ${
-                index !== data.items.length - 1 ? "pb-12 border-b border-gray-200" : ""
-              }`}
+              className={`flex flex-col sm:flex-row items-start gap-6 ${index !== data.items.length - 1 ? "pb-12 border-b border-gray-200" : ""
+                }`}
             >
               <div className="w-11 h-11 flex items-center justify-center rounded-full bg-[#F7F7F7] text-[#0067B8] border border-gray-300">
                 {iconMap[skill.icon] || iconMap.folder}
@@ -115,7 +120,9 @@ export default function SoftSkills({ data }: SoftSkillsProps) {
 
                 <div className="mt-4">
                   <a
-                    href={`/case/${skill.slug}`}
+                    // href={`/case/${skill.slug}`}
+                    // NEW HREF ADDED
+                    href={`/case/${skill.slug}${location.search}`}
                     className="text-sm font-regular text-[#0067B8] underline"
                   >
                     View Case Study →
