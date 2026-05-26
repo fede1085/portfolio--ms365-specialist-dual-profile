@@ -78,8 +78,8 @@ const GatewayLanding: React.FC = () => {
                         </p>
                     )}
 
-                    <div className="flex justify-end gap-2 pt-4">
-                        <button
+                    <div className="flex justify-start gap-2 pt-4">
+                        {/* <button
                             type="button"
                             onClick={() => {
                                 setAccessKey("");
@@ -88,7 +88,7 @@ const GatewayLanding: React.FC = () => {
                             className="px-6 py-2 text-sm bg-gray-200 text-[#333131]"
                         >
                             Clear
-                        </button>
+                        </button> */}
 
                         <button
                             type="submit"
