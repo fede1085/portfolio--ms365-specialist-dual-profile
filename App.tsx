@@ -11,10 +11,14 @@ import Footer from './components/Footer';
 import { getProfileContent } from './data/profileSelector';
 import SoftSkills from './components/SoftSkills';
 import SmoothScroll from "./components/SmoothScroll";
+import GatewayLanding from "./components/GatewayLanding";
+
 
 const App: React.FC = () => {
   const resumeData = getProfileContent();
-
+  if (!resumeData) {
+    return <GatewayLanding />;
+  }
   return (
     <BrowserRouter>
       <SmoothScroll />
@@ -53,16 +57,18 @@ const App: React.FC = () => {
           }
         />
 
+
+
         {/* 📄 CASE PAGE */}
-   <Route
-  path="/case/:slug"
-  element={
-    <StudyCase
-      name={resumeData.name}
-      cases={resumeData.case_studies}
-    />
-  }
-/>
+        <Route
+          path="/case/:slug"
+          element={
+            <StudyCase
+              name={resumeData.name}
+              cases={resumeData.case_studies}
+            />
+          }
+        />
 
       </Routes>
     </BrowserRouter>
